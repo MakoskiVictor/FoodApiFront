@@ -7,13 +7,13 @@ import swal from "sweetalert";
 import NavBarComponent from "../navBar/NavBarComponent.jsx";
 import axios from "axios";
 import "../postRecipe/PostRecipeComponent.css";
+import { BACK_URL } from "../../constantes.js";
 
 export default function PostRecipeComponent() {
   const diets = useSelector((state) => state.diets);
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
 
-  const c = console.log.bind(document);
 
   const history = useHistory();
 
@@ -35,8 +35,6 @@ export default function PostRecipeComponent() {
     diets: [],
   });
 
-  c(input);
-  c(imageSelected);
 
   //VALIDACIONES
   let validateName = /^[a-zA-Z\s]+$/;
@@ -98,7 +96,6 @@ export default function PostRecipeComponent() {
     e.preventDefault();
     if (Object.keys(errors).length === 0 && input.diets.length > 0) {
       if (imageSelected) {
-        c("entró a cloudinary");
         let imgCloudinary;
         const formData = new FormData();
         formData.append("file", imageSelected);
@@ -114,7 +111,7 @@ export default function PostRecipeComponent() {
               imgCloudinary = response.data.secure_url;
             })
             .then(async () => {
-              await axios.post(`http://localhost:3001/api/recipes`, {
+              await axios.post(`${BACK_URL}/api/recipes`, {
                 name: input.name,
                 summary: input.summary,
                 healthScore: input.healthScore,
@@ -142,7 +139,7 @@ export default function PostRecipeComponent() {
         }
       } else {
         await axios
-          .post(`http://localhost:3001/api/recipes`, input)
+          .post(`${BACK_URL}/api/recipes`, input)
           .then(() => {
             swal({
               title: "Recipe created succesfully",
