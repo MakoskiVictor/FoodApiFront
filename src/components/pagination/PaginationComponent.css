@@ -1,0 +1,29 @@
+.pagination{
+    /* margin: 10px 0; */
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+
+.paginated ul{
+    list-style: none; 
+    text-align: center;
+}
+
+.number{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.pageButton{
+    display: block;
+    padding: 8px 12px;
+    color: #fff;
+    background: rgba(49, 13, 13, 1);
+    text-decoration: none;
+}
+
+.pageButton:hover{
+    background: rgba(214, 175, 175, 0.473);
+    
+}
+

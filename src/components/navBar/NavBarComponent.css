@@ -1,0 +1,44 @@
+.NavBarComplete{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        background: rgba(0, 0, 0, 0.25);
+        background-color: rgba(49, 13, 13, 1);
+        font: 12px Arial, Helvetica;
+}
+
+.button {
+    margin: 0.30rem;
+    font-size: 200%;
+    border-radius: 2px;
+}
+
+
+
+.link1{ 
+    text-decoration:none;
+    margin: 0.30rem;
+    font-size: 15px;
+    color: bisque;
+}
+
+.link1:hover {
+    transform: scale(1.025, 1.025);
+    filter: drop-shadow(0 0 12px white);
+}
+
+.image{
+    width: 60px ;
+    height: 60px;
+    border-radius: 2px;
+    margin-left: 15px;
+}
+    .image:hover {
+    transform: scale(1.025, 1.025);
+    filter: drop-shadow(0 0 12px white);
+    };
+
+
+
+    
