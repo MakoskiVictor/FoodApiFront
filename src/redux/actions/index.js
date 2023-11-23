@@ -12,7 +12,7 @@ export const DELETE_DETAILS = "DELETE_DETAILS";
 
 export function fetchAllRecipes() {
   return function (dispatch) {
-    fetch(`${BACK_URL}/recipes`)
+    fetch(`${BACK_URL}/recipe`)
       .then((response) => response.json())
       .then((recipes) => {
         dispatch({
@@ -28,7 +28,7 @@ export function fetchAllRecipes() {
 
 export function fetchRecipeName(name) {
   return function (dispatch) {
-    fetch(`${BACK_URL}/recipes?name=${name}`)
+    fetch(`${BACK_URL}/recipe?name=${name}`)
       .then((response) => response.json())
       .then((recipe) => {
         dispatch({
@@ -44,7 +44,7 @@ export function fetchRecipeName(name) {
 
 export function fetchRecipeId(id) {
   return function (dispatch) {
-    fetch(`${BACK_URL}/recipes/${id}`)
+    fetch(`${BACK_URL}/recipe/${id}`)
       .then((response) => response.json())
       .then((recipe) => {
         dispatch({
@@ -60,7 +60,7 @@ export function fetchRecipeId(id) {
 
 export function fetchDiets() {
   return function (dispatch) {
-    fetch(`${BACK_URL}/diets`)
+    fetch(`${BACK_URL}/diet`)
       .then((response) => response.json())
       .then((diet) => {
         dispatch({
@@ -104,7 +104,7 @@ export function deleteDetails() {
 
 export function postRecipe(data) {
   return function (dispatch) {
-    fetch(`${BACK_URL}/recipes`, {
+    fetch(`${BACK_URL}/recipe`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
